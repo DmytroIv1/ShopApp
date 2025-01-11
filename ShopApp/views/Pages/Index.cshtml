@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Главная страница";
+}
+
+<h1>Добро пожаловать в магазин!</h1>
+
+<h3>Список товаров</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Отдел</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Department.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <strong>Total Products:</strong> @Model.Count()
+</div>
+
+<div class="btn-container" style="margin-top: 20px;">
+    <a href="@Url.Action("Index", "Products")" class="btn btn-primary">Посмотреть все товары</a>
+    <a href="@Url.Action("AddProduct", "Products")" class="btn btn-success">Добавить товар</a>
+    <a href="@Url.Action("ProductCount", "Products", new { departmentId = 1 })" class="btn btn-info">Посчитать товары в отделе 1</a>
+    <a href="@Url.Action("ProductsByDepartment", "Products", new { departmentId = 1 })" class="btn btn-warning">Посмотреть товары по отделу 1</a>
+    <a href="@Url.Action("CheckProductExists", "Products", new { productId = 1 })" class="btn btn-danger">Проверить существование товара 1</a>
+</div>

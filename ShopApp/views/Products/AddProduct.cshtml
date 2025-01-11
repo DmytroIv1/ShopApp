@@ -1,0 +1,22 @@
+﻿<h2>Добавить новый товар</h2>
+
+<form method="post" action="@Url.Action("AddProduct")">
+    <label for="productName">Название товара:</label>
+    <input type="text" name="productName" required />
+
+    <label for="price">Цена:</label>
+    <input type="number" name="price" required />
+
+    <label for="departmentId">Отдел:</label>
+    <select name="departmentId">
+        <option value="1">Отдел 1</option>
+        <option value="2">Отдел 2</option>
+    </select>
+
+    <button type="submit">Добавить товар</button>
+</form>
+
+@if (ViewData["Error"] != null)
+{
+    <div class="error">@ViewData["Error"]</div>
+}

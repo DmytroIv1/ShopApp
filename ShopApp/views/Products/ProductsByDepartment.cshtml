@@ -1,0 +1,20 @@
+﻿@model IEnumerable<ShopApp.Models.Product>
+
+<h2>Товары в отделе</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Название</th>
+            <th>Цена</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>

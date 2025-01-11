@@ -1,0 +1,8 @@
+"profiles": {
+  "IIS Express": {
+    "applicationUrl": "https://localhost:5001"
+  },
+  "ProjectName": {
+    "applicationUrl": "https://localhost:7154"
+  }
+}
